@@ -114,7 +114,7 @@ if file is not None:
         with mcol1:
             st.markdown("#### Coefficients")
             st.dataframe(df_coefficients)
-            st.write("### The Y-Intercept is:", y_intercept)
+            st.metric("The Y-Intercept is:", y_intercept)
         with mcol2:
             st.markdown("#### Predicted vs. Actual")
             fig, ax = plt.subplots()
@@ -122,7 +122,7 @@ if file is not None:
             ax.set(xlabel='Predicted Charges',
                    ylabel='Actual Charges')
             st.pyplot(fig)
-            st.write("### Mean Squared Error:", round(mean_squared_error(predictions, y_test),2))
+            st.metric("Mean Squared Error:", round(mean_squared_error(predictions, y_test),2))
         
     age_coeff, bmi_coeff, gender_coeff, smoker_coeff = df_coefficients["coefficient"]
 
@@ -150,4 +150,4 @@ if file is not None:
                      smoker_coeff * smoker +\
                      y_intercept
         if st.form_submit_button("Click to find out your premium"):
-            st.write("You will be charged {} dollars as premium".format(round(premium_charge,2)))
+            st.metric("Your premium in dollars is:", round(premium_charge,2))
