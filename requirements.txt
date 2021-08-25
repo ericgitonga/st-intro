@@ -7,7 +7,7 @@ ipython-genutils==0.2.0
 ipywidgets==7.6.3
 jsonschema==3.2.0
 Markdown==3.3.4
-streamlit==0.86.0
+streamlit==0.87.0
 pandas==1.2.4
 numpy==1.21.1
 pip==21.1.3
